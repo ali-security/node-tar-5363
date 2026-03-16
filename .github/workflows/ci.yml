@@ -4,8 +4,8 @@ on:
   push: {}
   pull_request_target:
     paths:
-      - 'src/**'
-      - 'test/**'
+      - src/**
+      - test/**
       - '*.json'
 
 
@@ -15,10 +15,10 @@ jobs:
       matrix:
         node-version: [22.x, 24.x]
         platform:
-        - os: ubuntu-latest
-          shell: bash
-        - os: macos-latest
-          shell: bash
+          - os: ubuntu-24.04
+            shell: bash
+          - os: macos-15
+            shell: bash
       fail-fast: false
 
     runs-on: ${{ matrix.platform.os }}
